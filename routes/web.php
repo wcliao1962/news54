@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/qrscan', function () {
+    return view('instascan.qrscan');
+});
