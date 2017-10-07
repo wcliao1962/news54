@@ -79,7 +79,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel News54 <a href="{{secure_url('/qrscan')}}">qrscan</a>
+                    Laravel News54 <a href="/qrscan">qrscan</a>
                 </div>
                 <div class="visible-print text-center">
                     {!! QrCode::size(100)->generate(Request::url()); !!}
