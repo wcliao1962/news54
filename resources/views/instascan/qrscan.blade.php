@@ -1,8 +1,8 @@
 <html>
   <head>
     <title>Instascan &ndash; Demo</title>
-    <link rel="icon" type="image/png" href="{{secure_asset('img/favicon.png')}}">
-    <link rel="stylesheet" href="{{secure_asset('css/style.css')}}">
+    <link rel="icon" type="image/png" href="./img/favicon.png">
+    <link rel="stylesheet" href="./css/style.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
@@ -16,9 +16,9 @@
           <ul>
             <li v-if="cameras.length === 0" class="empty">No cameras found</li>
             <li v-for="camera in cameras">
-              <span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active">{{ formatName(camera.name) }}</span>
+              <span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active">@{{ formatName(camera.name) }}</span>
               <span v-if="camera.id != activeCameraId" :title="formatName(camera.name)">
-                <a @click.stop="selectCamera(camera)">{{ formatName(camera.name) }}</a>
+                <a @click.stop="selectCamera(camera)">@{{ formatName(camera.name) }}</a>
               </span>
             </li>
           </ul>
@@ -29,7 +29,7 @@
             <li class="empty">No scans yet</li>
           </ul>
           <transition-group name="scans" tag="ul">
-            <li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
+            <li v-for="scan in scans" :key="scan.date" :title="scan.content">@{{ scan.content }}</li>
           </transition-group>
         </section>
       </div>
@@ -37,6 +37,6 @@
         <video id="preview"></video>
       </div>
     </div>
-    <script type="text/javascript" src="{{secure_asset('js/app2.js')}}"></script>
+    <script type="text/javascript" src="./js/app2.js"></script>
   </body>
 </html>
